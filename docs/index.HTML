@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.cdnfonts.com/css/vocaloid" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="box0">
+            <div class="logo">
+                <div class="logo1"></div>
+            </div>
+            <!-- second division inside header for the 3 rights boutons-->
+            <div class="rightbouttons">
+                <input type="text" class="search" placeholder="Search">
+                <a href="page1.html" class="sign">Sign in</a>
+                <a href="page8.html" class="man"></a>
+                <div id="burger" class="burger"></div>
+                    <div id="menu" class="menu">
+                        <a href="page4.html" class="menu-btn">Collection</a>
+                        <a href="page3.html" class="menu-btn">Communauté</a>
+                        <a href="page5.php" class="menu-btn">Catalogue</a>
+                        <a href="page6.html" class="menu-btn">Recherche de cartes</a>
+                        <a href="page7.html" class="menu-btn">Contact</a>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- this division is gonna fuse with the rectangle at the top-->
+        <!--empty space can be used for title-->
+        <div class="box1">
+            <a href="page2.html" class="bouton">Play now</a>
+            <div class="title"> VoCards:
+                <p class="cards"> Cartes sur les Vocaloides</p>
+            </div>
+            <!--showcase of the front and the back of the cards, careful about the flex-->
+            <div class="cardfront"></div>
+            <div class="cardback"></div>
+        </div>
+        <!--simple texte in a div-->
+        <div class="box2">
+            <h1 class="Vocaloid">Qu'est ce que le Vocaloid ?</h1>
+            <p>Le Vocaloid est une technologie musicale créée par Yamaha qui permet de produire des voix chantées
+                artificielles à partir de paroles et de mélodies.</p>
+            <p>Ces voix sont associées à des personnages virtuels comme :</p>
+            <ul>
+                <li>Hatsune Miku</li>
+                <li>Len Kagamine</li>
+                <li>Teto</li>
+                <li>Megurine Luka</li>
+                <li>Gumi</li>
+            </ul>
+            <p>La musique Vocaloid désigne les chansons créées avec ces voix de synthése.Elle peut appartenir a tous les
+                types mais surtout la J-pop, l'électro ou le rock et est souvent produite par des artistes indépendants.
+            </p>
+        </div>
+        <!--2 divs that contains each 2 divs, on for the image and another for text. The 2 big divs will fuse together into 1 big rectangle-->
+        <div class="boxcontainer1">
+            <div class="box3"></div>
+            <div class="textbox3">
+                <h1 class="VoCards">Bienvenue sur VoCards!!</h1>
+                <p>Un site fait par et pour les fans de Vocaloid ! Collectionnez, échangez et créez vos propres cartes,
+                    qui pourront même rejoindre la collection officielle du site.</p>
+                <p>Retrouvez des cartes de tous vos personnages Vocaloid préférés — et de nouvelles arriveront bientôt !
+                </p>
+                <p>Le site est encore en développement ! N'hésitez pas à nous envoyer vos suggestions via le formulaire
+                    en bas de la page.</p>
+            </div>
+        </div>
+        <!--same thing as i did for boxcontainer but u switch the text and the image zone-->
+        <div class="boxcontainer2">
+            <div class="textbox4">
+                <h1 class="work">Comment ca marche ?</h1>
+                <p>Tous les jours, vous pourrez ouvrir trois packs de cartes Vocaloid, dont la rareté varie de 2 étoiles
+                    à 4 étoiles. Plus une carte a d'étoiles, plus elle est rare. </p>
+                <p>Si vous collectionnez cinq exemplaires d'une même carte, vous pourrez les fusionner afin de
+                    l'éveiller.</p>
+                <p>Vous aurez la possibilité d'échanger vos cartes avec d'autres collectionneurs.</p>
+                <p>Enfin, nous organiserons des événements où nous vous inviterons à créer une carte. Celle qui recevra
+                    le plus de votes aura la chance d'apparaître sur le site dans la catégorie VocaMake, accompagnée
+                    d'autres récompenses.</p>
+                <p>Gratuit, relaxant et amusant : collectionnez, créez et échangez vos cartes Vocaloid !</p>
+            </div>
+            <div class="box4"></div> <!--divs for cards showcase-->
+        </div>
+        <div class="container">   <!--cartes + swiper (beaucoup de div)-->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="card" onclick="flipCard(this)">
+                            <div class="card-inner">
+                                <div class="card-front" style="background-image:url('Image/IMG_9086.jpeg')"></div>
+                                <div class="card-back" style="background-image:url('Image/IMG_9011.jpeg')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card" onclick="flipCard(this)">
+                            <div class="card-inner">
+                                <div class="card-front" style="background-image:url('Image/IMG_9015.jpeg')"></div>
+                                <div class="card-back" style="background-image:url('Image/IMG_9085.jpeg')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card" onclick="flipCard(this)">
+                            <div class="card-inner">
+                                <div class="card-front" style="background-image:url('Image/IMG_9089.jpeg')"></div>
+                                <div class="card-back" style="background-image:url('Image/IMG_9012.jpeg')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card" onclick="flipCard(this)">
+                            <div class="card-inner">
+                                <div class="card-front" style="background-image:url('Image/IMG_9088.jpeg')"></div>
+                                <div class="card-back" style="background-image:url('Image/IMG_9013.jpeg')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card" onclick="flipCard(this)">
+                            <div class="card-inner">
+                                <div class="card-front" style="background-image:url('Image/IMG_9010.jpeg')"></div>
+                                <div class="card-back" style="background-image:url('Image/IMG_9009.jpeg')"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--div into div fro swipper buton-->
+                </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+        <!-- div into div for the contact and send zone-->
+         
+        <div class="footer">
+            <div id="notif" class="notif">
+                Message envoyé !
+            </div>
+            <h1 class="ContactUs">Contact us</h1>
+            <p>Ce travail est créé a partir de Visual Studio Code.</p>
+            <p>Ce site Web est purement créé par des fans et n'est en aucun cas associé à TWINDRILL ou Crypton Future
+                Media, Inc.</p>
+            <p>Decrivez nous votre problème ou faites nous un retour ci-dessous.</p>
+        </div>
+        <div class="footerboutons"> <!--divs for the bouton and text zone-->
+    <input type="text" class="Contact" >
+
+    <div class="ContactBouton" onclick="afficherNotif()">Send</div>
+
+    <button id="toggleMode" class="lightmode">Apparence</button>
+</div>
+    </footer>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<script src="main.js"></script>
+</body>
+</html>

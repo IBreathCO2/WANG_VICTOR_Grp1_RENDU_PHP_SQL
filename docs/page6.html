@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cartes Vocaloid</title>
+
+<!--partie css -->
+
+<style>
+    
+body {
+    font-family: Arial, sans-serif;
+    background: url("Image/jue9kc82sc051.png");    /*chemin pour mettre image de fond*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+.cartes {
+    color: black;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background: cyan;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.card {
+    background: rgba(0,0,0,0.7); /*couleur de fond seulement avec une opacité*/
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto 0;
+}
+
+.card img {
+    width: 100%;
+}
+
+</style>
+
+<!--partie HTML-->
+
+</head>
+<body>
+
+<h1 class="cartes">Cartes Vocaloid</h1>
+<input type="text" id="vocaloid" placeholder="Ex: Miku">
+<button id="getVocaloid">Rechercher</button>
+
+<!--zone pour afficher la carte -->
+
+<div id="card"></div>
+
+
+<!--partie JS-->
+
+<script>
+//on attend que l'utilisateur clique sur le bouton
+document.getElementById('getVocaloid').addEventListener('click', () => {
+    const name = document.getElementById('vocaloid').value || 'Miku';
+    const url = `src/index.php?name=${encodeURIComponent(name)}`; //construire l'adresse de notre PHP avec le nom ?name
+
+    fetch(url) //envoie de requete qui converti la reponse en json
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur reseau ou API');
+            }
+            return response.json();
+        })
+
+        .then(data => { //afficher ka carte dans la div
+            const cardDiv = document.getElementById('card');
+
+            if (!data.items || data.items.length === 0) {
+                cardDiv.innerText = 'Aucun résultat';
+                return;
+            }
+
+            const p = data.items[0]; //prendre seulement le premier resultat
+
+            let image = ""; //afficher l'image
+            if (p.mainPicture) {
+                image = `<img src="${p.mainPicture.urlThumb}">`;
+            }
+
+            let description = p.description; //afficher description + si il n'y a pas de description du perso
+            if (!description) {
+                description = "Pas de description";
+            }
+
+            //carte generer a mettre dans la div HTML
+            //`` -> garder un html lisible sans utliser de + entre les ${}
+            cardDiv.innerHTML = `
+                <div class="card">
+                    ${image}                
+                    <h2>${p.name}</h2>
+                    <p>${description}</p>
+                </div>
+            `;
+        })
+        
+        //si il y a une erreur quelconque
+        .catch(error => {
+            console.log('Erreur : ' + error);
+            document.getElementById('card').innerText = 'Erreur lors de la récupération des données';
+        });
+});
+</script>
+
+</body>
+</html>

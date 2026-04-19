@@ -1,0 +1,9 @@
+{
+  "items": [
+    {
+      "name": "Hatsune Miku",
+      "description": "Vocaloid célèbre",
+      "mainPicture": { "urlThumb": "https://..." }
+    }
+  ]
+}

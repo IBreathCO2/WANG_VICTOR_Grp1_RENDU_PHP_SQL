@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.cdnfonts.com/css/vocaloid" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Page 1</title>
+</head>
+<body class="page1"> 
+
+    <div class="container">
+
+        <!--zone gauche-->
+        <div class="left">
+            <h1>
+                Profitez de la meilleure expérience<br>
+                avec un compte totalement<br>
+                gratuit !
+            </h1>
+        </div>
+
+        <!--zone droite-->
+<div class="right">
+
+    <!--message error/succes-->
+    <div class="message-error" id="errorContainer">
+        <ul id="errorList"></ul>
+    </div>
+
+    <div class="message-success" id="successMessage">
+        Compte créé avec succès !
+    </div>
+
+    <!--formulaire-->
+    <form id="signupForm" class="login-form">
+        <div class="form-group">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" id="pseudo" placeholder="Pseudo">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="mdp">Mot de passe</label>
+            <input type="password" id="mdp" placeholder="Mot de passe">
+        </div>
+        <div class="form-group">
+            <label for="mdpVerif">Confirmez le mot de passe</label>
+            <input type="password" id="mdpVerif" placeholder="Confirmation du mot de passe">
+        </div>
+
+        <!--qcm-->
+        <div class="form-group">
+            <h2>Lequel de ces cartes vocaloides voulez vous commencez avec ?</h2>
+            <div class="radio-group">
+                <div>
+                    <input type="radio" name="vocaloid" id="Miku">
+                    <label for="Miku">Miku</label>
+                </div>
+                <div>
+                    <input type="radio" name="vocaloid" id="Teto">
+                    <label for="Teto">Teto</label>
+                </div>
+                <div>
+                    <input type="radio" name="vocaloid" id="Gumi">
+                    <label for="Gumi">Gumi</label>
+                </div>
+            </div>  
+            <button type="submit">Créer un compte</button>
+        </div>  
+    </form>
+</div>  
+    <script src="main.js"></script>
+</body>
+</html>

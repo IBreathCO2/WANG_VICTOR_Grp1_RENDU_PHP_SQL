@@ -1,0 +1,994 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
+    transform: scale(1.5);
+    transform-origin: top left;
+    width: 66.67%;
+}
+
+body {
+  margin: 0;
+}
+
+/* this box regroups logo to man */
+/* 2 divs in a div that contain another divs, use flex to space them, use flex grow for the research bar*/
+.box0 {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(103, 201, 186);
+    border: 5px solid rgb(103, 201, 186);
+    display: flex;
+}
+
+.logo {
+    width: 13%;
+    height: 60px;
+    background-color: rgb(103, 201, 186);
+    border: 5px solid rgb(103, 201, 186);
+    margin-top: 5px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo1 {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border: 5px solid white;
+    margin-bottom: 5px;
+    background-image: url('Image/Vocaloid.logo.png');
+    background-size: cover;
+}
+
+
+
+.rightbouttons {
+    width: 70%;
+    height: 70px;
+    background-color: rgb(103, 201, 186);
+    border: 5px solid rgb(103, 201, 186);
+    margin-top: 5px;
+    margin-left: 370px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search {
+    width: 40%;
+    height: 50px;
+    background-color: white;
+    border: 5px solid black;
+    margin: 5px;
+    border-radius: 45px;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Vocaloid', sans-serif;
+    color: black;
+    padding-left: 15px;
+    outline: none;
+}
+
+.sign {
+    width: 20%;
+    height: 50px;
+    background-color: white;
+    border: 5px solid white;
+    margin: 5px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Vocaloid', sans-serif;
+    border-radius: 10px;
+    color: black;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sign:hover {
+    background:white;
+    transform:scale(1.1);
+    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.man {
+    width: 8%;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    margin: 5px;
+    border-radius: 50px;
+    background-image: url('Image/Face.jpg');
+    background-size: cover;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.man:hover {
+    transform:scale(1.1);
+    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.burger {
+    width: 8%;
+    height: 50px;
+    border: 3px solid ;
+    margin: 2px;
+    margin-left: 15px;
+    border-radius: 20px;
+    background-image: url('Image/menu-button-three-horizontal-lines-260nw-785528545.webp');
+    background-size: cover;
+    transition: 0.3s;
+    z-index: 2;
+    transform-origin: center;
+}
+
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 270px;
+    height: 100%;
+    background-color: lightgray;
+    padding: 70px 20px 20px 20px; 
+    font-family: 'Vocaloid', sans-serif;
+    transition: right 0.3s;
+    display: flex;            /* active le flex */
+    flex-direction: column;   /* aligne les éléments verticalement */
+    gap: 10px;                /* espace entre les boutons */
+    visibility: hidden;
+}
+
+.menu-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: rgb(103, 201, 186);
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn:hover {
+    background-color: rgb(189, 4, 4);
+    color: white;
+    transform:scale(1.1);
+    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.open {
+    right: 0px;
+    visibility: visible;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+/* box 1 regroups boutton to cardback */
+/* the big rectangle is gonna fuse with the top one to form one big rectangle*/
+/* use flex to space them as you wish*/
+/*adjuste the margins if needed*/
+
+.box1 {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(103, 201, 186);
+    border: 5px solid rgb(103, 201, 186);
+    display: flex;
+
+}
+
+
+.bouton {
+    width: 11%;
+    height: 64px;
+    background-color: white;
+    border: 5px solid black;
+    margin-left: 70px;
+    margin-top: 300px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Vocaloid', sans-serif;
+    color: black;
+
+    animation: pulse 3s infinite; /* animation ajoutée */
+}
+
+.bouton:hover {
+    color: rgb(189, 4, 4);
+}
+
+/* animation */
+@keyframes pulse {
+
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.3);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.title {
+    width: 25%;
+    height: 200px;
+    background-color: rgb(103, 201, 186);
+    border: 3px solid rgb(103, 201, 186);
+    font-family: 'Vocaloid', sans-serif;
+    text-align: center;
+    font-size: 60px;
+    color: rgb(189, 4, 4);
+}
+
+.cards {
+    font-size: 35px;
+    color: rgb(34, 9, 195);
+}
+
+.cardfront {
+    width: 20%;
+    height: 375px;
+    background-color: white;
+    border: 3px solid rgb(103, 201, 186);
+    margin-left: 120px;
+    border-radius: 20px;
+    background-image: url('Image/IMG_9014.jpeg');
+    background-size: cover;
+}
+
+.cardback {
+    width: 20%;
+    height: 375px;
+    background-color: white;
+    border: 3px solid rgb(103, 201, 186);
+    margin-left: 80px;
+    border-radius: 20px;
+    background-image: url('Image/IMG_9002.jpeg');
+    background-size: cover;
+}
+
+/* yellow part that contain text about whats vocaloid */
+/*simple text zone in a div*/
+.box2 {
+    width: 100%;
+    height: 250px;
+    background-color: rgb(251, 239, 82);
+    border: 5px solid rgb(251, 239, 82);
+    font-family: 'Vocaloid', sans-serif;
+}
+
+/* divs that containe box 3 and textbox3 */
+/*image zone at the left and text zone at the right*/
+
+.boxcontainer1 {
+    width: 100%;
+    height: 305px;
+    background-color: rgb(242, 191, 201);
+    border: 3px solid rgb(242, 191, 201);
+    display: flex;
+    justify-content: space-between;
+}
+
+.box3 {
+    width: 46%;
+    height: 300px;
+    background-color: white;
+    border: 3px solid rgb(242, 191, 201);
+    margin-bottom: 20px;
+    background-image: url('Image/desktop-wallpaper-vocaloid-backgrounds-vocaloid.jpg');
+    background-size: cover;
+}
+
+/* add text about the purpose of the site */
+
+.textbox3 {
+    width: 53%;
+    height: 300px;
+    background-color: rgb(242, 191, 201);
+    border: 5px solid rgb(242, 191, 201);
+    font-family: 'Vocaloid', sans-serif;
+}
+
+/* divs that containe textbox 4 and box4 */
+/* text zone at the left and image zone at the right*/
+
+.boxcontainer2 {
+    width: 100%;
+    height: 420px;
+    background-color: rgb(242, 191, 201);
+    border: 5px solid rgb(242, 191, 201);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* add text about how the site works*/
+
+.textbox4 {
+    width: 45%;
+    height: 400px;
+    background-color: rgb(242, 191, 201);
+    border: 5px solid rgb(242, 191, 201);
+    font-family: 'Vocaloid', sans-serif;
+}
+
+/*the picture has the same backgroud as the divs*/
+
+.box4 {
+    width: 54%;
+    height: 400px;
+    background-color: rgb(242, 191, 201);
+    border: 5px solid rgb(242, 191, 201);
+    background-image: url('Image/IMG_9018.jpeg');
+    background-size: cover;
+}
+
+/*division in which we weill have 4 cards displayed*/
+.container {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(204, 80, 74);
+    border: 5px solid rgb(204, 80, 74);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* cards border need to be the same color as the background of the divs*/
+/*cards all have the same propreties*/
+
+/* CARD CONTAINER */
+
+.card {
+    width: 20%;
+    height: 375px;
+    cursor: pointer;
+    margin-top: 110px;
+}
+
+/* rotation */
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* flip */
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* faces */
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+/* back side */
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* hover animation */
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/*last part is footer juste need one divison inside the big div*/
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(63, 101, 197);
+    border: 5px solid rgb(63, 101, 197);
+    font-family: 'Vocaloid', sans-serif;
+    text-align: start;
+}
+
+/*footerbouton is the divison in which i will create 2 other divison for the buton and text zone*/
+.footerboutons {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(63, 101, 197);
+    border: 5px solid rgb(63, 101, 197);
+    display: flex;
+}
+
+.Contact {
+    width: 30%;
+    height: 50px;
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+.ContactBouton {
+    width: 10%;
+    height: 52px;
+    background-color: white;
+    border: 5px solid black;
+    margin-left: 20px;
+    text-align: center;
+    font-family: 'Vocaloid', sans-serif;
+    font-size: 25px;
+    border-radius: 10px;
+    color: black;
+}
+
+
+.ContactBouton:hover {
+    color: rgb(237, 129, 61);
+}
+
+/* change the color of the h1*/
+
+.Vocaloid {
+    color: rgb(1, 212, 143);
+}
+
+.VoCards {
+    color: rgb(174, 46, 90);
+}
+
+.work {
+    color: rgb(94, 88, 88);
+}
+
+.ContactUs {
+    color: rgb(251, 243, 237);
+}
+
+.lightmode {
+    width: 20%;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 450px;
+    text-align: center;
+    font-family: 'Vocaloid', sans-serif;
+    font-size: 20px;
+    background-size: cover;
+}
+
+.lightmode:hover {
+    color: rgb(237, 129, 61);
+}
+
+/*darkmode*/
+
+.darkmode {
+    background-color: black;
+    color: white;
+}
+
+/*darkmode + what i need to change*/
+
+.darkmode .footer {
+    background-color: rgb(36, 58, 123);
+    border: 5px solid rgb(36, 58, 123);
+}
+.darkmode .footerboutons {
+    background-color: rgb(36, 58, 123);
+    border: 5px solid rgb(36, 58, 123);
+}
+
+.darkmode .lightmode {
+    background-color: rgb(36, 58, 123);
+    border: 5px solid rgb(36, 58, 123);
+    color: white;
+    border-color: white;
+}
+.darkmode .ContactBouton {
+    background-color: rgb(36, 58, 123);
+    border: 5px solid rgb(36, 58, 123);
+    color: white;
+    border-color: white;
+}
+.darkmode .Contact {
+    background-color: rgb(36, 58, 123);
+    border: 5px solid rgb(36, 58, 123);
+    color: white;
+    border-color: white;
+}
+
+.darkmode .container {
+    background-color: rgb(128, 50, 46);
+    border: 5px solid rgb(128, 50, 46);
+    color: white;
+}
+
+
+.darkmode .card1{
+    background-color: rgb(128, 50, 46);
+    border: 5px solid rgb(128, 50, 46);
+    color: white;
+}
+
+.darkmode .card2{
+    background-color: rgb(128, 50, 46);
+    border: 5px solid rgb(128, 50, 46);
+    color: white;
+}
+
+.darkmode .card3{
+    background-color: rgb(128, 50, 46);
+    border: 5px solid rgb(128, 50, 46);
+    color: white;
+}
+
+.darkmode .card4{
+    background-color: rgb(128, 50, 46);
+    border: 5px solid rgb(128, 50, 46);
+    color: white;
+}
+
+.darkmode .swiper-slide {
+    background: rgb(128, 50, 46);
+}
+
+.darkmode .box3{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+}
+
+.darkmode .textbox3{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+}
+
+.darkmode .box4{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+    background-image: url('Image/IMG_9091.jpeg');
+    background-size: cover;
+}
+
+.darkmode .textbox4{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+}
+
+.darkmode .boxcontainer1{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+}
+
+
+.darkmode .boxcontainer2{
+    background-color: rgb(171, 135, 143);
+    border: 5px solid rgb(171, 135, 143);
+    color: white;
+}
+
+.darkmode .box1 {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+.darkmode .box2 {
+    background-color: rgb(163, 155, 53);
+    border: 5px solid rgb(163, 155, 53);
+    color: white;
+}
+
+.darkmode .box0 {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .rightbouttons {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .title {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .cardback {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .cardfront {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .cardback {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+.darkmode .logo {
+    background-color: rgb(66, 128, 118);
+    border: 5px solid rgb(66, 128, 118);
+    color: white;
+}
+
+/*1eme page href*/
+
+.page1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Vocaloid', sans-serif;
+}
+
+.page1 .container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.page1 .left {
+    flex: 1;
+    padding: 60px;
+    color: white;
+}
+
+.page1 .right {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    color: white;
+    align-items: flex-start;
+    padding-top: 40px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 40px;
+}
+
+/*Formulaire*/
+
+.page1 .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+
+.page1 .forgot {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.page1 .left h1 {
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+/*Messages erreur/succès*/
+
+.message-error {
+    border: 1px solid rgba(212, 42, 0, 1);
+    color: white;
+    background-color: rgba(150, 0, 0, 0.85);
+    padding: 16px 32px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.message-error.visible {
+    display: block;
+    font-family: 'Vocaloid', sans-serif;
+}
+
+.message-success {
+    border: 1px solid rgb(81, 150, 2);
+    color: rgb(81, 150, 2);
+    background-color: rgba(113, 212, 0, 0.4);
+    padding: 16px 32px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.message-success.visible {
+    display: block;
+    font-family: 'Vocaloid', sans-serif;
+}
+
+.success {
+    border: 2px solid rgb(81, 150, 2) !important;
+    background-color: rgba(113, 212, 0, 0.2);
+    font-family: 'Vocaloid', sans-serif;
+}
+.error {
+    border: 2px solid rgb(208, 17, 17) !important;
+    background-color: rgba(246, 0, 0, 0.2);
+    font-family: 'Vocaloid', sans-serif;
+}
+
+/*bouton validation*/
+
+.page1 .login-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background-color: rgb(103, 201, 186);
+    border: 3px solid white;
+    border-radius: 10px;
+    font-family: 'Vocaloid', sans-serif;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.page1 .login-form button:hover {
+    background-color: white;
+    color: rgb(103, 201, 186);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*page 2*/
+
+
+body.page2 {
+    margin: 0;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader {
+    width: 120px;
+    height: 120px;
+    border: 8px solid #444;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: tourner 0.8s linear infinite;
+}
+
+.texte {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/*loader animation*/
+
+@keyframes tourner{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/*swipper dans page d'acceuil*/
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgb(204, 80, 74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*notif de send*/ 
+
+.notif {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    background: #2ecc71;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notif.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*page3*/
+
+body.page3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.page3 .box {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;  
+    border-radius: 20px; 
+}
+
+
+body.page3 {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+
+/*page 4 fallery de cartes*/
+
+body.page4 {
+    background-image: url('Image/thumb-1920-110576.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+/*apparitions de cartes*/
+
+.carte {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carte:hover {
+    transform: scale(1.05);
+}
+
+.glightbox {
+    opacity: 0;
+    animation: apparition 0.6s ease-out forwards;
+}
+
+/*delai des cartes*/
+.glightbox:nth-child(1)  { 
+    animation-delay: 0s; 
+}
+.glightbox:nth-child(2)  { 
+    animation-delay: 0.1s; 
+}
+.glightbox:nth-child(3)  { 
+    animation-delay: 0.2s; 
+}
+.glightbox:nth-child(4)  { 
+    animation-delay: 0.3s; 
+}
+.glightbox:nth-child(5)  { 
+    animation-delay: 0.4s; 
+}
+.glightbox:nth-child(6)  { 
+    animation-delay: 0.5s; 
+}
+.glightbox:nth-child(7)  { 
+    animation-delay: 0.6s; 
+}
+.glightbox:nth-child(8)  { 
+    animation-delay: 0.7s; 
+}
+.glightbox:nth-child(9)  { 
+    animation-delay: 0.8s; 
+}
+.glightbox:nth-child(10) { 
+    animation-delay: 0.9s; 
+}
+.glightbox:nth-child(11) { 
+    animation-delay: 1s; 
+}
+
+@keyframes apparition {
+    from { 
+        opacity: 0; transform: translateY(20px); 
+    }
+    to   { 
+        opacity: 1; transform: translateY(0); 
+    }
+}
+
+/*page 5 rien pour l'instant*/
+
+body.page5 {
+    background-image: url('Image/wp2716005.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
